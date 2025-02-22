@@ -1,3 +1,10 @@
+body{
+    background-image: url("WoodyBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #C7AB86;
+}
+
 table{
     /*убирает двойные границы между ячейками*/
     border-collapse: collapse;
@@ -22,3 +29,12 @@ td{
     font-size: 12px;
 }
 
+.Chess{
+    font-family: "Apple Chancery";
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 20px 10px 25px rgba(39, 39, 39, 0.2);
+    font-weight: 900;
+    margin-bottom:20px ;
+
+}
