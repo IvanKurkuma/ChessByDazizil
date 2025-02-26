@@ -158,7 +158,6 @@ function can_move(sx,sy,dx,dy) { // если
 }
 
 function is_correct_move(sx,sy,dx,dy) { // проверять корректность хода для каждой фигуры в отдельности
-    // в данном случае будем рассматривать фигуры конь
     let figure = field[sx][sy]
     if(is_knight(figure))
     {
@@ -174,44 +173,111 @@ function is_correct_move(sx,sy,dx,dy) { // проверять корректно
     }
     if(is_king(figure))
     {
+        if(is_rochade_valid(sx,sy,dx,dy))
+        {
+            return rochade(sx,sy,dx,dy)
+        } 
         return is_correct_king_move(sx,sy,dx,dy)
     }
-    // if(is_queen(figure))
-    // {
-    //     return is_correct_queen_move(sx,sy,dx,dy)
-    // }
-    // if(is_bishop(figure))
-    // {
-    //     return is_correct_bishop_move
-    // }
+    if(is_queen(figure))
+    {
+        return is_correct_queen_move(sx,sy,dx,dy)
+    }
+    if(is_bishop(figure))
+    {
+        return is_correct_bishop_move(sx,sy,dx,dy)
+    }
+}
+
+function rochade(sx,sy,dx,dy){
+
+}
+
+
+function is_rochade_valid(sx,sy,dx,dy){
+    let figure = field[sx][sy]
+    let second_figure = field[dx][dy+1]
+    if(is_king(figure) && field[dx][dy] === ' ' && is_rook(second_figure))
+    {
+        return true
+    }
 }
 
 function is_rook(figure) {
-    return figure.toUpperCase() === 'R'
+    return figure.toUpperCase() === 'R';
 }
 
-function is_correct_rook_move(sx,sy,dx,dy) {
-    if (Math.abs(dx - sx) === 0 && Math.abs(dy - sy) <=7) {
-        return true
+function is_correct_rook_move(sx, sy, dx, dy) {
+    if (sx === dx || sy === dy) {
+        return is_path_clear(sx, sy, dx, dy);
     }
-    if (Math.abs(dx - sx) <= 7 && Math.abs(dy - sy) === 0) {
-        return true
+    return false;
+}
+
+function is_bishop(figure) {
+    return figure.toUpperCase() === 'B';
+}
+
+function is_correct_bishop_move(sx, sy, dx, dy) {
+    if (Math.abs(dx - sx) === Math.abs(dy - sy)) {
+        return is_path_clear(sx, sy, dx, dy);
     } else {
         return false
     }
 }
+
+function is_queen(figure) {
+    return figure.toUpperCase() === 'Q';
+}
+
+function is_correct_queen_move(sx, sy, dx, dy) {
+    return is_correct_rook_move(sx, sy, dx, dy) || is_correct_bishop_move(sx, sy, dx, dy);
+}
+
+function is_path_clear(sx, sy, dx, dy) {
+    let stepX = dx > sx ? 1 : dx < sx ? -1 : 0;
+    let stepY = dy > sy ? 1 : dy < sy ? -1 : 0;
+    let x = sx + stepX;
+    let y = sy + stepY;
+
+    while (x !== dx || y !== dy) {
+        if (field[x][y] !== ' ') {
+            return false;
+        }
+        x += stepX;
+        y += stepY;
+    }
+    return true;
+}
+
+
 //////////////////////////////////////////////////pawn
 function is_pawn(figure){
     return figure.toUpperCase() === 'P'
 }
 
-function is_correct_pawn_move(sx,sy,dx,dy){
-    if(Math.abs(dx-sx) <1  && Math.abs(dy-sy) <= 2)
-    {
-        return true
-    } else {
-        return false
+function is_correct_pawn_move(sx, sy, dx, dy) {
+    let figure = field[sx][sy];
+    let direction = (figure === 'P') ? 1 : -1; // Белые идут вверх, черные вниз
+
+    // Обычный ход пешки на одну клетку вперед
+    if (sx === dx && dy - sy === direction && field[dx][dy] === ' ') {
+        return true;
     }
+
+    // Первый ход пешки (две клетки вперед)
+    if (sx === dx && dy - sy === 2 * direction && field[dx][dy] === ' ' && field[sx][sy + direction] === ' ') {
+        if ((figure === 'P' && sy === 1) || (figure === 'p' && sy === 6)) {
+            return true;
+        }
+    }
+
+    // Пешка бьет фигуры по диагонали
+    if (Math.abs(dx - sx) === 1 && dy - sy === direction && field[dx][dy] !== ' ' && setting_stroke(dx, dy) !== move_color) {
+        return true;
+    }
+
+    return false;
 }
 
 function is_knight(figure){
@@ -355,7 +421,4 @@ function start()
     mark_walking_ability()
     show_my_bord()
 }
-
-
-
 
