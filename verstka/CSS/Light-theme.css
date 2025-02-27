@@ -1,0 +1,106 @@
+.light{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: rgb(187,190,225);
+    transition: filter .4s, background .4s;
+    opacity: .5;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.light:hover{
+    filter: brightness(119%);
+}
+.light:active{
+    filter: brightness(78%);
+}
+
+.porno{
+    width: 35px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -18px;
+    margin-top: -18px;
+    opacity: 0;
+}
+
+.moon{
+    opacity: 1;
+    transition: opacity .4s;
+}
+
+.sun{
+    transition: opacity .4s;
+}
+
+body.light_theme{
+  background:rgb(255, 255, 204) ;  
+}
+
+/* body.light_theme .shapka{
+    background: rgb(255, 255, 204);
+} */
+
+
+body.light_theme .light{
+    background: rgb(194, 194, 109);
+
+}
+
+body.light_theme .moon{
+    opacity: 0;
+}
+
+body.light_theme .sun{
+    opacity: 1;
+}
+
+
+body.light_theme .login>span{
+    background: rgb(255,255,204);
+    background: linear-gradient(36deg, rgba(255,255,204,1) 22%, rgba(226,151,70,1) 55%, rgba(226,151,70,1) 84%, rgba(255,255,255,1) 100%);
+    background-size: 200% 200%;
+}
+
+@keyframes login {
+    0% {
+        background-position: 30% 60%;
+    }
+    100% {
+        background-position: 100% 30%;
+    }
+}
+
+
+body.light_theme .login>span{
+    animation-name: login;
+    animation-duration: 3s;
+    animation-timing-function:linear ;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+body.light_theme .huinya{
+    background: rgb(230, 230, 193);
+    border: 1px solid gray;
+    box-sizing: border-box;
+    
+}
+
+body.light_theme .bok_panel{
+    background: rgb(247,247,186);
+    /* background: linear-gradient(90deg, rgba(247,247,186,1) 86%, rgba(255,255,204,1) 100%); */
+}
+body.light_theme .bok_panel a:hover{
+    background:rgb(231, 231, 172) ;
+}
+
+
+

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Bold;
+    src: url('../FONTS/Bold.ttf');
+}
+
+@font-face {
+    font-family: Medium;
+    src: url('../FONTS/Regular.ttf');
+}
+
+@font-face{
+    font-family: Light;
+    src: url('../FONTS/Light.ttf');
+}
+
+@font-face{
+    font-family: Thin;
+    src: url('../FONTS/Thin.ttf');
+}

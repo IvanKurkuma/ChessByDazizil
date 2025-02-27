@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Шахматы</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="icon" href="../IMG/OIP.ico">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/fonts.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/aside.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/main.css">
+
+        
+        <link rel="stylesheet" type="text/css" href="../CSS/Light-theme.css">
+
+        <script defer src="../js/light.theme.js"></script>
+    </head>
+    <body>
+        <script>
+            const theme = localStorage.getItem("theme")
+            if(theme){
+                document.body.classList.add(theme)
+            }
+        </script>
+        <header class="shapka">
+            <div class="header_left">
+                <div class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <a href="main.html"><img class="logo" src="../IMG/logo_web.png" alt="Иконка сайта"></a>
+            </div>
+           
+            <div class="profil">
+                <a href="" class="login">
+                    <span>
+                        Войти
+                    </span>
+                </a>
+                <div class="huinya">
+                    <img class="black_avatar avatar" id="avatar" src="../IMG/avatar-default-svgrepo-com.svg" alt="аватар игрока">
+                </div>
+            </div>
+        </header>
+        <aside class="bok_panel" id="aside">
+            <a class="buttons button_f" href="main.html">
+                <img src="../IMG/aside_img/home.svg" alt="">
+                <p>Главная</p>
+            </a>
+            <a class="buttons button_s" href="">
+                <img src="../IMG/aside_img/knight-chess-svgrepo-com.svg" alt="">
+                <p>Играть</p>
+            </a>
+            <div class="border"></div>
+            <a class="buttons button_t" href="">
+                <img src="../IMG/aside_img/profile.svg" alt="">
+                <p>Профиль</p>
+            </a>
+            <a class="buttons button_fo" href="">
+                <img src="../IMG/aside_img/friends.svg" alt="">
+                <p>Друзья</p>
+            </a>
+            <a class="buttons button_ei" href="">
+                <img src="../IMG/aside_img/analytics-seo-and-web-svgrepo-com.svg" alt="">
+                <p>Статистика</p>
+            </a>
+            <div class="border"></div>
+            <a class="buttons button_fi" href="">
+                <img src="../IMG/aside_img/news.svg" alt="">
+                <p>Новости</p>
+            </a>
+            <a class="buttons button_si" href="">
+                <img src="../IMG/aside_img/exclamation.svg" alt="">
+                <p>Жалобы</p>
+            </a>
+            <a class="buttons button_se" href="">
+                <img src="../IMG/aside_img/setting.svg" alt="">
+                <p>Настройки</p>
+            </a>
+            <button class="light" id="light">
+                <img class="moon porno" src="../IMG/moon-stars-svgrepo-com.svg" alt="">
+                <img class="sun porno" src="../IMG/sun-svgrepo-com.svg" alt="">
+            </button>
+        </aside>
+       
+        <div id="overlay"></div>
+        <script src="../js/aside_open.js"></script>
+    </body>
+</html>
