@@ -93,7 +93,7 @@ function show_my_bord(){ // создание поля с окраской
 function change_color(x,y){ // цвет поля
     if((x+y)%2===0)
     {
-        return '#9C6C48'
+        return '#c89c7b'
     }else {
         return '#F2E0CF'
     }

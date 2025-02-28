@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess by Dazizil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="../IMG/OIP.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <img class="logo" src="../verstka/IMG/logo_web.png" alt="">
+        <aside class="bok_panel_in_chess" id="aside">
+            <div>
+                <a class="buttons button_f" href="../verstka/HTML/main.html">
+                    <img src="../verstka/IMG/aside_img/home.svg" alt="">
+                    <p>Главная</p>
+                </a>
+                <a class="buttons button_s" href="../../Chess_Desk/game.html">
+                    <img src="../verstka/IMG/aside_img/knight-chess-svgrepo-com.svg" alt="">
+                    <p>Играть</p>
+                </a>
+                <div class="border"></div>
+                <a class="buttons button_t" href="">
+                    <img src="../verstka/IMG/aside_img/profile.svg" alt="">
+                    <p>Профиль</p>
+                </a>
+                <a class="buttons button_fo" href="">
+                    <img src="../verstka/IMG/aside_img/friends.svg" alt="">
+                    <p>Друзья</p>
+                </a>
+                <a class="buttons button_ei" href="">
+                    <img src="../verstka/IMG/aside_img/analytics-seo-and-web-svgrepo-com.svg" alt="">
+                    <p>Статистика</p>
+                </a>
+                <div class="border"></div>
+                <a class="buttons button_fi" href="">
+                    <img src="../verstka/IMG/aside_img/news.svg" alt="">
+                    <p>Новости</p>
+                </a>
+                <a class="buttons button_si" href="">
+                    <img src="../verstka/IMG/aside_img/exclamation.svg" alt="">
+                    <p>Жалобы</p>
+                </a>
+                <a class="buttons button_se" href="">
+                    <img src="../verstka/IMG/aside_img/setting.svg" alt="">
+                    <p>Настройки</p>
+                </a>
+            </div>
+        </aside>
+        <div class="game_place">
+            <div id="my_bord"></div>
+            <script>
+                start()
+            </script>
+            <div class="game_panel">
+                <span>
+                    <img src="/Chess_Desk/IMG/pen-svgrepo-com.svg" alt="">
+                    <h6>Запись партии</h6>
+                </span>
+                <div class="history" id="history">
+                    <p>1.</p>
+                    <p>2.</p>
+                    <p>3.</p>
+                    <p>4.</p>
+                    <p>5.</p>
+                    <p>6.</p>
+                    <p>7.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                    <p>8.</p>
+                </div>
+                <div class="buttons_s">
+                    <button onclick="bring_it_back();">
+                        <img src="/Chess_Desk/IMG/arrow-u-up-left-svgrepo-com.svg" alt="шаг назад">
+                    </button>
+                    <button onclick="bring_it_font();">
+                        <img src="/Chess_Desk/IMG/arrow-u-up-right-svgrepo-com.svg" alt="шаг вперед">
+                    </button> 
+                    <button onclick="surrender();">
+                        <img src="/Chess_Desk/IMG/white-flag-svgrepo-com.svg" alt="Сдаться">
+                    </button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
