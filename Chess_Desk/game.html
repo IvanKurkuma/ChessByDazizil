@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="icon" href="../IMG/OIP.ico">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../verstka/CSS/fonts.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="index.js"></script>
 </head>
 <body>
-    <img class="logo" src="../verstka/IMG/logo_web.png" alt="">
+    <img class="fon fon_f" src="/Chess_Desk/IMG/kon.svg" alt="">
+    <img class="fon fon_s" src="/Chess_Desk/IMG/chess-bishop-solid-svgrepo-com.svg" alt="">
+    <img class="fon fon_t" src="/Chess_Desk/IMG/chess-king-solid-svgrepo-com.svg" alt="">
+    <img class="fon fon_fo" src="/Chess_Desk/IMG/chess-queen-solid-svgrepo-com.svg" alt="">
+    <img class="fon fon_fi" src="/Chess_Desk/IMG/chess-pawn-solid-svgrepo-com.svg" alt="">
+    <img class="logo" src="../verstka/IMG/Logo_f.png" alt="">
         <aside class="bok_panel_in_chess" id="aside">
             <div>
                 <a class="buttons button_f" href="../verstka/HTML/main.html">
@@ -50,6 +56,22 @@
             </div>
         </aside>
         <div class="game_place">
+            <div class="player Apponent">
+                <a class="huinya">
+                    <img src="../verstka/IMG/avatar-default-svgrepo-com.svg" alt="">
+                </a>
+                <p class="nickname">Opponent</p>
+                <span class="score" id="score">1000</span>
+            </div>
+
+            <div class="player Me">
+                <a class="huinya">
+                    <img src="../verstka/IMG/avatar-default-svgrepo-com.svg" alt="">
+                </a>
+                <p class="nickname">Me</p>
+                <span class="score" id="score">1000</span>
+            </div>
+            
             <div id="my_bord"></div>
             <script>
                 start()
@@ -68,13 +90,13 @@
                     <p>6.</p>
                     <p>7.</p>
                     <p>8.</p>
-                    <p>8.</p>
-                    <p>8.</p>
-                    <p>8.</p>
-                    <p>8.</p>
-                    <p>8.</p>
-                    <p>8.</p>
-                    <p>8.</p>
+                    <p>9.</p>
+                    <p>10.</p>
+                    <p>11.</p>
+                    <p>12.</p>
+                    <p>13.</p>
+                    <p>14.</p>
+                    <p>15.</p>
                 </div>
                 <div class="buttons_s">
                     <button onclick="bring_it_back();">
